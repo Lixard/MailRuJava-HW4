@@ -40,4 +40,9 @@ public class Nomenclature {
     public void setCode(long code) {
         this.code = code;
     }
+
+    @Override
+    public String toString() {
+        return id + ", " + name +
+    }
 }

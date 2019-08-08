@@ -46,19 +46,37 @@ public final class NomenclatureDAO implements AbstractDAO<Nomenclature> {
     }
 
     @Override
-    public void insert(@NotNull Nomenclature nomenclature) throws SQLException {
-        statement.executeUpdate("insert into nomenclature(id, name, code) values (" + nomenclature.getId() + "," +
-                nomenclature.getName() + "," + nomenclature.getCode() + ");");
+    public boolean insert(@NotNull Nomenclature nomenclature) {
+        try {
+            statement.executeUpdate("insert into nomenclature(id, name, code) values (" + nomenclature.getId() + ",'" +
+                    nomenclature.getName() + "'," + nomenclature.getCode() + ");");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void update(@NotNull Nomenclature nomenclature) throws SQLException {
-        statement.executeUpdate("update nomenclature set name = " + nomenclature.getName() + ", code = " +
-                nomenclature.getCode() + ") where id = " + nomenclature.getId() + ";");
+    public boolean update(@NotNull Nomenclature nomenclature) {
+        try {
+            statement.executeUpdate("update nomenclature set name = '" + nomenclature.getName() + "', code = " +
+                    nomenclature.getCode() + " where id = " + nomenclature.getId() + ";");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void delete(Long id) throws SQLException {
-        statement.executeUpdate("delete from nomenclature where id = " + id + ";");
+    public boolean delete(Long id) {
+        try {
+            statement.executeUpdate("delete from nomenclature where id = " + id + ";");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

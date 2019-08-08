@@ -48,21 +48,39 @@ public final class OrganizationsDAO implements AbstractDAO<Organizations> {
     }
 
     @Override
-    public void insert(@NotNull Organizations organizations) throws SQLException {
-        statement.executeUpdate("insert into organizations(id, name, inn, settlement_acc) values " +
-                "(" + organizations.getId() + "," + organizations.getName() + ","
-                + organizations.getInn() + "," + organizations.getSettlement_acc() + ");");
+    public boolean insert(@NotNull Organizations organizations) {
+        try {
+            statement.executeUpdate("insert into organizations(id, name, inn, settlement_acc) values " +
+                    "(" + organizations.getId() + ",'" + organizations.getName() + "',"
+                    + organizations.getInn() + "," + organizations.getSettlement_acc() + ");");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void update(@NotNull Organizations organizations) throws SQLException {
-        statement.executeUpdate("update organizations set name = " + organizations.getName() + ", inn = " +
-                organizations.getInn() + ", settlement_acc =" + organizations.getSettlement_acc() +
-                ") where id = " + organizations.getId() + ";");
+    public boolean update(@NotNull Organizations organizations) {
+        try {
+            statement.executeUpdate("update organizations set name = '" + organizations.getName() + "', inn = " +
+                    organizations.getInn() + ", settlement_acc =" + organizations.getSettlement_acc() +
+                    " where id = " + organizations.getId() + ";");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void delete(Long id) throws SQLException {
-        statement.executeUpdate("delete from organizations where id = " + id + ";");
+    public boolean delete(Long id) {
+        try {
+            statement.executeUpdate("delete from organizations where id = " + id + ";");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

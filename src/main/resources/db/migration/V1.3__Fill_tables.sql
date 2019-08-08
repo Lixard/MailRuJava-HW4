@@ -47,7 +47,8 @@ insert into nomenclature(id, code, name) values
 (12,02693828,'Товар 12'),
 (13,78951136,'Товар 13'),
 (14,98127855,'Товар 14'),
-(15,25966756,'Товар 15');
+(15,25966756,'Товар 15'),
+(16,29392130,'Товар 16');
 
 insert into positions(nomenclature_id, waybill_id, price, amount) values
 (1,1,263,12),
@@ -64,5 +65,7 @@ insert into positions(nomenclature_id, waybill_id, price, amount) values
 (12,12,209,234),
 (13,13,109,166),
 (14,14,236,14),
-(15,15,23,15);
+(15,15,23,15),
+(16,1,500,1500);
+
 

@@ -3,10 +3,8 @@ package DAOs;
 import Entities.Waybills;
 import org.jetbrains.annotations.NotNull;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
+import java.sql.*;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,7 +20,7 @@ public final class WaybillsDAO implements AbstractDAO<Waybills> {
     private static Waybills createEntity(@NotNull ResultSet resultSet) throws SQLException {
         final long org_send_id = resultSet.getLong("org_send_id");
         final long number = resultSet.getLong("number");
-        final Timestamp date = resultSet.getTimestamp("date");
+        final Date date = resultSet.getDate("date");
 
         return new Waybills(org_send_id, number, date);
     }
@@ -46,19 +44,37 @@ public final class WaybillsDAO implements AbstractDAO<Waybills> {
     }
 
     @Override
-    public void insert(@NotNull Waybills waybills) throws SQLException {
-        statement.executeUpdate("insert into waybills(org_send_id, number, date) values (" + waybills.getOrg_send_id() +
-                "," + waybills.getNumber() + "," + waybills.getDate() + ");");
+    public boolean insert(@NotNull Waybills waybills) {
+        try {
+            statement.executeUpdate("insert into waybills(org_send_id, number, date) values (" + waybills.getOrg_send_id() +
+                    "," + waybills.getNumber() + ",'" + waybills.getDate() + "');");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void update(@NotNull Waybills waybills) throws SQLException {
-        statement.executeUpdate("update waybills set number = " + waybills.getNumber()+ ", date = " +
-                waybills.getDate() + "where org_send_id = " + waybills.getOrg_send_id() + ";");
+    public boolean update(@NotNull Waybills waybills) {
+        try {
+            statement.executeUpdate("update waybills set number = " + waybills.getNumber()+ ", date = '" +
+                    waybills.getDate() + "' where org_send_id = " + waybills.getOrg_send_id() + ";");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void delete(Long id) throws SQLException {
-        statement.executeUpdate("delete from positions where id = " + id + ";");
+    public boolean delete(Long id) {
+        try {
+            statement.executeUpdate("delete from waybills where org_send_id = " + id + ";");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

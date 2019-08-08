@@ -26,6 +26,7 @@ public final class PositionsDAO implements AbstractDAO<Positions> {
 
         return new Positions(nomenclature_id, waybill_id, price, amount);
     }
+
     @Override
     @NotNull
     public List<Positions> getAll() throws SQLException {
@@ -46,21 +47,39 @@ public final class PositionsDAO implements AbstractDAO<Positions> {
     }
 
     @Override
-    public void insert(@NotNull Positions positions) throws SQLException {
-        statement.executeUpdate("insert into positions(nomenclature_id, waybill_id, price, amount) values (" +
-                positions.getNomenclature_id() + "," + positions.getWaybill_id() + "," + positions.getPrice() + "," +
-                positions.getAmount() + ");");
+    public boolean insert(@NotNull Positions positions) {
+        try {
+            statement.executeUpdate("insert into positions(nomenclature_id, waybill_id, price, amount) values (" +
+                    positions.getNomenclature_id() + "," + positions.getWaybill_id() + "," + positions.getPrice() + "," +
+                    positions.getAmount() + ");");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void update(@NotNull Positions positions) throws SQLException {
-        statement.executeUpdate("update positions set waybill_id = " + positions.getWaybill_id() +
-                ", price = " + positions.getPrice() + ", amount = " + positions.getAmount() + "where nomenclature_id =" +
-                positions.getNomenclature_id() + ";");
+    public boolean update(@NotNull Positions positions) {
+        try {
+            statement.executeUpdate("update positions set waybill_id = " + positions.getWaybill_id() +
+                    ", price = " + positions.getPrice() + ", amount = " + positions.getAmount() + "where nomenclature_id =" +
+                    positions.getNomenclature_id() + ";");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void delete(Long id) throws SQLException {
-        statement.executeUpdate("delete from positions where id = " + id + ";");
+    public boolean delete(Long id) {
+        try {
+            statement.executeUpdate("delete from positions where nomenclature_id = " + id + ";");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

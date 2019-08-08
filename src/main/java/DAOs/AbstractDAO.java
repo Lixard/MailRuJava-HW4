@@ -12,9 +12,9 @@ public interface AbstractDAO<E> {
     @NotNull
     E getById(Long id) throws SQLException;
 
-    void insert(E e) throws SQLException;
+    boolean insert(E e);
 
-    void update(E e) throws SQLException;
+    boolean update(E e);
 
-    void delete(Long id) throws SQLException;
+    boolean delete(Long id);
 }

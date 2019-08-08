@@ -13,14 +13,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/db/migration/V1.2__Create_person_table.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/AbstractDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/AbstractDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/NomenclatureDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/NomenclatureDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/OrganizationsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/OrganizationsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/PositionsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/PositionsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/WaybillsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/WaybillsDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Nomenclature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Nomenclature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Organizations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Positions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Positions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Entities/Waybills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entities/Waybills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.2__Create_tables.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.3__Fill_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1.3__Fill_tables.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,6 +66,12 @@
                 <item name="DBWithJDBC" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="flyway" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DBWithJDBC" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -114,7 +120,66 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.DBWithJDBC [run]">
+  <component name="RunManager" selected="Gradle.DBWithJDBC [flywayMigrate]">
+    <configuration name="DBDAOTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;DBDAOTests&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DBDAOTests.insertWaybillTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;DBDAOTests.insertWaybillTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DBWithJDBC [flywayClean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="flywayClean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="DBWithJDBC [flywayMigrate]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -134,7 +199,7 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DBWithJDBC [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DBWithJDBC [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -145,64 +210,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MailRuJava-HW4 [flywayBaseline]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="flywayBaseline" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MailRuJava-HW4 [flywayClean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="flywayClean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MailRuJava-HW4 [flywayInfo]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="flywayInfo" />
+            <option value="test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -213,10 +221,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.DBWithJDBC [flywayMigrate]" />
-        <item itemvalue="Gradle.DBWithJDBC [run]" />
-        <item itemvalue="Gradle.MailRuJava-HW4 [flywayBaseline]" />
-        <item itemvalue="Gradle.MailRuJava-HW4 [flywayInfo]" />
-        <item itemvalue="Gradle.MailRuJava-HW4 [flywayClean]" />
+        <item itemvalue="Gradle.DBWithJDBC [flywayClean]" />
+        <item itemvalue="Gradle.DBDAOTests" />
+        <item itemvalue="Gradle.DBDAOTests.insertWaybillTest" />
+        <item itemvalue="Gradle.DBWithJDBC [test]" />
       </list>
     </recent_temporary>
   </component>

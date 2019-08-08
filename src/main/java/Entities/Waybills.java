@@ -2,16 +2,16 @@ package Entities;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.sql.Timestamp;
+;import java.util.Date;
 
 
 public class Waybills {
     private long org_send_id;
     private long number;
     @NotNull
-    private Timestamp date;
+    private Date date;
 
-    public Waybills(long org_send_id, long number, @NotNull Timestamp date) {
+    public Waybills(long org_send_id, long number, @NotNull Date date) {
         this.org_send_id = org_send_id;
         this.number = number;
         this.date = date;
@@ -34,11 +34,11 @@ public class Waybills {
     }
 
     @NotNull
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(@NotNull Timestamp date) {
+    public void setDate(@NotNull Date date) {
         this.date = date;
     }
 }

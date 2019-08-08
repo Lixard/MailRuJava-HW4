@@ -1,6 +1,4 @@
-import jdk.jfr.FlightRecorder;
 import org.flywaydb.core.Flyway;
-import org.flywaydb.core.api.configuration.Configuration;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
