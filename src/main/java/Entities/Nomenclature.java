@@ -41,8 +41,8 @@ public class Nomenclature {
         this.code = code;
     }
 
-    @Override
-    public String toString() {
-        return id + ", " + name +
-    }
+//    @Override
+//    public String toString() {
+//        return id + ", " + name +
+//    }
 }
