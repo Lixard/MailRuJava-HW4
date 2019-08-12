@@ -1,5 +1,6 @@
 import QueryEntities.DataAmountPrice;
 import QueryEntities.OrganizationWithAmount;
+import QueryEntities.OrganizationWithGoods;
 import QueryEntities.OrganizationWithPrice;
 import org.flywaydb.core.Flyway;
 
@@ -34,7 +35,8 @@ public final class App {
 
             System.out.println(queries.AvgPricePerPeriod("11-03-2019","13-03-2019"));
 
-
+            List<OrganizationWithGoods> list4 = queries.organizationsWithGoodsPerPeriod("13-03-2019","15-03-2019");
+            System.out.println(Arrays.toString(list4.toArray()));
             statement.close();
         } catch (SQLException e) {
             e.printStackTrace();

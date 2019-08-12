@@ -21,4 +21,10 @@ public class OrganizationWithGoods {
         this.nomenclatureID = nomenclatureID;
         this.nomenclatureName = nomenclatureName;
     }
+
+    @Override
+    public String toString() {
+        return "\norganization ID: " + organizationID + " Name: " + organizationName + " nomenclature ID: " +
+                nomenclatureID + " Name: " + nomenclatureName;
+    }
 }
