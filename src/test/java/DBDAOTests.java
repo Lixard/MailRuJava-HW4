@@ -2,10 +2,10 @@ import DAOs.NomenclatureDAO;
 import DAOs.OrganizationsDAO;
 import DAOs.PositionsDAO;
 import DAOs.WaybillsDAO;
-import Entities.Nomenclature;
-import Entities.Organizations;
-import Entities.Positions;
-import Entities.Waybills;
+import DB_Entities.Nomenclature;
+import DB_Entities.Organizations;
+import DB_Entities.Positions;
+import DB_Entities.Waybills;
 import org.flywaydb.core.Flyway;
 import org.jetbrains.annotations.NotNull;
 import org.junit.*;
@@ -45,14 +45,14 @@ public final class DBDAOTests {
     @Test
     public void insertNomenclatureTest() {
         NomenclatureDAO nomenclatureDAO = new NomenclatureDAO(statement);
-        Nomenclature obj = new Nomenclature(100,"Новая номенклатура",456768663);
+        Nomenclature obj = new Nomenclature(100,"New nomenclature",456768663);
         Assert.assertTrue(nomenclatureDAO.insert(obj));
     }
 
     @Test
     public void updateNomenclatureTest() {
         NomenclatureDAO nomenclatureDAO = new NomenclatureDAO(statement);
-        Nomenclature obj = new Nomenclature(5, "Обновленная номенклатура", 12345678);
+        Nomenclature obj = new Nomenclature(5, "Updated Nomenclature", 12345678);
         Assert.assertTrue(nomenclatureDAO.update(obj));
     }
 
@@ -67,14 +67,14 @@ public final class DBDAOTests {
     @Test
     public void insertOrganizationTest() {
         OrganizationsDAO organizationsDAO = new OrganizationsDAO(statement);
-        Organizations obj = new Organizations(100,"Новая организация",123456,123123);
+        Organizations obj = new Organizations(100,"New Organization",123456,123123);
         Assert.assertTrue(organizationsDAO.insert(obj));
     }
 
     @Test
     public void updateOrganizationTest() {
         OrganizationsDAO organizationsDAO = new OrganizationsDAO(statement);
-        Organizations obj = new Organizations(10,"Обновленная организация",123456,123123);
+        Organizations obj = new Organizations(10,"New Organization",123456,123123);
         Assert.assertTrue(organizationsDAO.update(obj));
     }
 
@@ -92,7 +92,7 @@ public final class DBDAOTests {
     public void insertPositionTest() {
         PositionsDAO positionsDAO = new PositionsDAO(statement);
         NomenclatureDAO nomenclatureDAO = new NomenclatureDAO(statement);
-        Nomenclature nomenclature = new Nomenclature(20,"Новая номенклатура",123456);
+        Nomenclature nomenclature = new Nomenclature(20,"New Nomenclature",123456);
         Positions position = new Positions(20,1, 500, 200);
         nomenclatureDAO.insert(nomenclature);
         Assert.assertTrue(positionsDAO.insert(position));
@@ -115,7 +115,7 @@ public final class DBDAOTests {
     public void insertWaybillTest() throws ParseException {
         WaybillsDAO waybillsDAO = new WaybillsDAO(statement);
         OrganizationsDAO organizationsDAO = new OrganizationsDAO(statement);
-        Organizations organization = new Organizations(50,"Новая организация", 552,32032);
+        Organizations organization = new Organizations(50,"new Organization", 552,32032);
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         String dateInString = "29-11-2015";
         Date date = formatter.parse(dateInString);

@@ -1,8 +1,8 @@
-package Entities;
+package DB_Entities;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Nomenclature {
+public final class Nomenclature {
     @NotNull
     private long id;
     @NotNull
@@ -20,29 +20,13 @@ public class Nomenclature {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     @NotNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NotNull String name) {
-        this.name = name;
-    }
 
     public long getCode() {
         return code;
     }
-
-    public void setCode(long code) {
-        this.code = code;
-    }
-
-//    @Override
-//    public String toString() {
-//        return id + ", " + name +
-//    }
 }

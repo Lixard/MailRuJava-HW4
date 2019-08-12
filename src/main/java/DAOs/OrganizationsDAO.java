@@ -1,6 +1,6 @@
 package DAOs;
 
-import Entities.Organizations;
+import DB_Entities.Organizations;
 import org.jetbrains.annotations.NotNull;
 
 import java.sql.ResultSet;

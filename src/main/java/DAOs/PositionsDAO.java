@@ -1,6 +1,6 @@
 package DAOs;
 
-import Entities.Positions;
+import DB_Entities.Positions;
 import org.jetbrains.annotations.NotNull;
 
 import java.sql.ResultSet;

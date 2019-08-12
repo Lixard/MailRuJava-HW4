@@ -1,11 +1,10 @@
-package Entities;
+package DB_Entities;
 
 import org.jetbrains.annotations.NotNull;
 
-;import java.util.Date;
+import java.util.Date;
 
-
-public class Waybills {
+public final class Waybills {
     private long org_send_id;
     private long number;
     @NotNull
@@ -21,16 +20,8 @@ public class Waybills {
         return org_send_id;
     }
 
-    public void setOrg_send_id(long org_send_id) {
-        this.org_send_id = org_send_id;
-    }
-
     public long getNumber() {
         return number;
-    }
-
-    public void setNumber(long number) {
-        this.number = number;
     }
 
     @NotNull
@@ -38,7 +29,4 @@ public class Waybills {
         return date;
     }
 
-    public void setDate(@NotNull Date date) {
-        this.date = date;
-    }
 }

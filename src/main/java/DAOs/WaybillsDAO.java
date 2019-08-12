@@ -1,9 +1,11 @@
 package DAOs;
 
-import Entities.Waybills;
+import DB_Entities.Waybills;
 import org.jetbrains.annotations.NotNull;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,7 +22,7 @@ public final class WaybillsDAO implements AbstractDAO<Waybills> {
     private static Waybills createEntity(@NotNull ResultSet resultSet) throws SQLException {
         final long org_send_id = resultSet.getLong("org_send_id");
         final long number = resultSet.getLong("number");
-        final Date date = resultSet.getDate("date");
+        final Date date = resultSet.getTimestamp("date");
 
         return new Waybills(org_send_id, number, date);
     }

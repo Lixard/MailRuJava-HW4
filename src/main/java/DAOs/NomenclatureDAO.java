@@ -1,6 +1,6 @@
 package DAOs;
 
-import Entities.Nomenclature;
+import DB_Entities.Nomenclature;
 import org.jetbrains.annotations.NotNull;
 
 import java.sql.ResultSet;

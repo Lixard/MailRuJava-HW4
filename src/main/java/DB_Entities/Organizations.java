@@ -1,8 +1,8 @@
-package Entities;
+package DB_Entities;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Organizations {
+public final class Organizations {
 
     private long id;
     @NotNull
@@ -24,32 +24,16 @@ public class Organizations {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     @NotNull
     public String getName() {
         return name;
-    }
-
-    public void setName(@NotNull String name) {
-        this.name = name;
     }
 
     public long getInn() {
         return inn;
     }
 
-    public void setInn(long inn) {
-        this.inn = inn;
-    }
-
     public long getSettlement_acc() {
         return settlement_acc;
-    }
-
-    public void setSettlement_acc(long settlement_acc) {
-        this.settlement_acc = settlement_acc;
     }
 }
